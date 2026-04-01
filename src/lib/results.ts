@@ -9,7 +9,7 @@ export function generateSummary(
       ? answers["Q1"].trim()
       : "Your team";
 
-  const { migrationReadiness, complexityRating, definitionConfidence } = scores;
+  const { migrationReadiness, complexityRating } = scores;
 
   let readinessDesc: string;
   if (migrationReadiness.percent >= 80) readinessDesc = "ready to scope";
