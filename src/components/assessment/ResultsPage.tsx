@@ -180,11 +180,11 @@ export default function ResultsPage({ answers, scores }: ResultsPageProps) {
           padding: "40px 24px",
         }}
       >
-        <button
-          onClick={() =>
-            window.open("https://avenuez.com/contact", "_blank")
-          }
-          className="mb-4 inline-block cursor-pointer border-none px-8 py-[14px] text-sm font-800 uppercase tracking-[0.06em] text-black"
+        <a
+          href="https://calendar.app.google/6gNYSzw1cK6iqySf9"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mb-4 inline-block cursor-pointer border-none px-8 py-[14px] text-sm font-800 uppercase tracking-[0.06em] text-black no-underline"
           style={{
             background:
               "linear-gradient(135deg, #FFFC60, #60FF80, #60FDFF)",
@@ -192,7 +192,7 @@ export default function ResultsPage({ answers, scores }: ResultsPageProps) {
           }}
         >
           Talk to a Migration Architect
-        </button>
+        </a>
         <p className="mx-auto max-w-lg text-sm leading-relaxed text-text-muted">
           Every successful migration starts with understanding. Whether
           you&apos;re ready to scope now or need help clarifying requirements

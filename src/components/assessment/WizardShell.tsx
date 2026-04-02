@@ -5,6 +5,7 @@ import { sections } from "@/data/sections";
 import { questionsMap } from "@/data/questions";
 import { AssessmentState, Answers } from "@/lib/types";
 import { calculateScores } from "@/lib/scoring";
+import { submitLead } from "@/lib/submitLead";
 import QuestionRenderer from "./QuestionRenderer";
 
 interface WizardShellProps {
@@ -84,6 +85,7 @@ export default function WizardShell({
 
     if (isLastSection) {
       const scores = calculateScores(state.answers);
+      submitLead(state.answers, scores);
       submit(scores);
     } else {
       nextSection();

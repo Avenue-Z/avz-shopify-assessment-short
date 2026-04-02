@@ -69,6 +69,15 @@ export function generateStrengths(
     });
   }
 
+  const q16 = typeof answers["Q16"] === "string" ? answers["Q16"] : "";
+  if (q16 === "High confidence") {
+    strengths.push({
+      label: "High confidence in data quality",
+      detail:
+        "Strong data quality reduces cleanup effort and accelerates migration timelines.",
+    });
+  }
+
   const q15 = typeof answers["Q15"] === "string" ? answers["Q15"] : "";
   if (q15 === "Yes") {
     strengths.push({
@@ -111,21 +120,21 @@ export function generateConsiderations(
     });
   }
 
-  const q15 = typeof answers["Q15"] === "string" ? answers["Q15"] : "";
-  if (q15 !== "Yes") {
-    considerations.push({
-      label: "SEO/AEO migration planning",
-      detail:
-        "Without a plan, you risk losing organic traffic and search rankings during migration.",
-    });
-  }
-
   const q16 = typeof answers["Q16"] === "string" ? answers["Q16"] : "";
   if (q16 === "Low confidence" || q16 === "Unsure") {
     considerations.push({
       label: "Data quality concerns",
       detail:
         "Auditing and cleaning customer, product, and order data before migration is essential.",
+    });
+  }
+
+  const q15 = typeof answers["Q15"] === "string" ? answers["Q15"] : "";
+  if (q15 !== "Yes") {
+    considerations.push({
+      label: "SEO/AEO migration planning",
+      detail:
+        "Without a plan, you risk losing organic traffic and search rankings during migration.",
     });
   }
 

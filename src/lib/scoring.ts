@@ -19,14 +19,14 @@ function calcDefinitionConfidence(answers: Answers) {
   if (q14 === "Fully documented") score += 2;
   else if (q14 === "Partially documented") score += 1;
 
-  // Q15
-  const q15 = getAnswer(answers, "Q15");
-  if (q15 === "Yes") score += 2;
-
   // Q16
   const q16 = getAnswer(answers, "Q16");
   if (q16 === "High confidence") score += 2;
   else if (q16 === "Moderate confidence") score += 1;
+
+  // Q15
+  const q15 = getAnswer(answers, "Q15");
+  if (q15 === "Yes") score += 2;
 
   const percent = Math.round((score / max) * 100);
   let band: string;
@@ -86,10 +86,11 @@ function calcMigrationReadiness(answers: Answers) {
 
   // Q12
   const q12 = getAnswer(answers, "Q12");
-  if (q12 === "We have a team budget and requirements in place") score += 2;
+  if (q12 === "CEO / Founder" || q12 === "Ecommerce leadership") score += 2;
   else if (
-    q12 ===
-    "We have a team and budget but requirements are still being defined"
+    q12 === "Marketing leadership" ||
+    q12 === "IT / Engineering" ||
+    q12 === "Operations"
   )
     score += 1;
 
