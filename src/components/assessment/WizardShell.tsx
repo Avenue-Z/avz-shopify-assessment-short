@@ -146,34 +146,62 @@ export default function WizardShell({
       })}
 
       {/* Navigation */}
-      <div className="mt-10 flex items-center justify-between">
-        {state.currentSectionIndex > 0 ? (
+      {isLastSection ? (
+        <div className="mt-12 flex flex-col items-center">
           <button
-            onClick={handleBack}
-            className="cursor-pointer border-none px-6 py-3 text-sm font-700 text-white"
+            onClick={handleNext}
+            className="cursor-pointer border-none px-12 py-5 text-base font-800 uppercase tracking-[0.06em] text-black"
             style={{
-              background: "#3a3a3a",
+              background:
+                "linear-gradient(135deg, #FFFC60, #60FF80, #60FDFF)",
               borderRadius: 9999,
             }}
           >
-            Back
+            See My Results →
           </button>
-        ) : (
-          <div />
-        )}
+          <p className="mt-5 max-w-md text-center text-sm text-text-muted">
+            Your personalized scorecard will show your migration readiness,
+            definition confidence, and complexity rating.
+          </p>
+          {state.currentSectionIndex > 0 && (
+            <button
+              onClick={handleBack}
+              className="mt-6 cursor-pointer border-none bg-transparent text-sm font-700 text-text-muted underline"
+            >
+              Back
+            </button>
+          )}
+        </div>
+      ) : (
+        <div className="mt-10 flex items-center justify-between">
+          {state.currentSectionIndex > 0 ? (
+            <button
+              onClick={handleBack}
+              className="cursor-pointer border-none px-6 py-3 text-sm font-700 text-white"
+              style={{
+                background: "#3a3a3a",
+                borderRadius: 9999,
+              }}
+            >
+              Back
+            </button>
+          ) : (
+            <div />
+          )}
 
-        <button
-          onClick={handleNext}
-          className="cursor-pointer border-none px-8 py-[14px] text-sm font-800 uppercase tracking-[0.06em] text-black"
-          style={{
-            background:
-              "linear-gradient(135deg, #FFFC60, #60FF80, #60FDFF)",
-            borderRadius: 9999,
-          }}
-        >
-          {isLastSection ? "See My Results" : "Continue"}
-        </button>
-      </div>
+          <button
+            onClick={handleNext}
+            className="cursor-pointer border-none px-8 py-[14px] text-sm font-800 uppercase tracking-[0.06em] text-black"
+            style={{
+              background:
+                "linear-gradient(135deg, #FFFC60, #60FF80, #60FDFF)",
+              borderRadius: 9999,
+            }}
+          >
+            Continue
+          </button>
+        </div>
+      )}
     </div>
   );
 }

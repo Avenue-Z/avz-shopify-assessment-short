@@ -229,18 +229,6 @@ export const questions: Question[] = [
     required: true,
     section: "lead_capture",
   },
-  {
-    id: "QC",
-    text: "How would you like to receive your results?",
-    type: "single_select",
-    options: [
-      "Book a discovery call to review my results",
-      "Email me my results and book a follow-up call",
-      "Just email me my results for now",
-    ],
-    required: true,
-    section: "lead_capture",
-  },
 ];
 
 export const questionsMap = new Map(questions.map((q) => [q.id, q]));

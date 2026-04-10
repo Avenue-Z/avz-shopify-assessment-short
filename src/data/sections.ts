@@ -24,6 +24,6 @@ export const sections: Section[] = [
   {
     id: "lead_capture",
     title: "Almost done",
-    questionIds: ["QA", "QB", "QC"],
+    questionIds: ["QA", "QB"],
   },
 ];

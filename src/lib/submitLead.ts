@@ -18,7 +18,6 @@ export async function submitLead(
     annualRevenue: answers["Q4"] || "",
     fullName: answers["QA"] || "",
     email: answers["QB"] || "",
-    resultPreference: answers["QC"] || "",
     definitionConfidence: scores.definitionConfidence.percent,
     definitionBand: scores.definitionConfidence.band,
     complexityScore: scores.complexityRating.score,
