@@ -36,6 +36,15 @@ export function generateStrengths(
     });
   }
 
+  const q16 = typeof answers["Q16"] === "string" ? answers["Q16"] : "";
+  if (q16 === "High confidence") {
+    strengths.push({
+      label: "High confidence in data quality",
+      detail:
+        "Strong data quality reduces cleanup effort and accelerates migration timelines.",
+    });
+  }
+
   if (scores.definitionConfidence.percent >= 60) {
     strengths.push({
       label: "Requirements clarity",
@@ -66,15 +75,6 @@ export function generateStrengths(
       label: "Budget approved",
       detail:
         "Approved budget removes one of the biggest blockers to project kickoff.",
-    });
-  }
-
-  const q16 = typeof answers["Q16"] === "string" ? answers["Q16"] : "";
-  if (q16 === "High confidence") {
-    strengths.push({
-      label: "High confidence in data quality",
-      detail:
-        "Strong data quality reduces cleanup effort and accelerates migration timelines.",
     });
   }
 
