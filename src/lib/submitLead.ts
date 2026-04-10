@@ -12,7 +12,7 @@ export async function submitLead(
 ): Promise<void> {
   const leadData = {
     timestamp: new Date().toISOString(),
-    brand: answers["Q1"] || "",
+    brandName: answers["Q1"] || "",
     businessModel: answers["Q2"] || "",
     currentPlatform: answers["Q3"] || "",
     annualRevenue: answers["Q4"] || "",
