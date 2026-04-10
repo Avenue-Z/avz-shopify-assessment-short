@@ -4,7 +4,7 @@ import { Answers, ScoreResult } from "./types";
 // 1. Create a Google Apps Script that accepts POST requests and writes to a Google Sheet
 // 2. Deploy as Web App (Execute as: Me, Who has access: Anyone)
 // 3. Paste the deployed URL below
-const GOOGLE_SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbxn7c8Cd-SD9tOn24KCGz8bJ7ttdjIS3fLv5ShTzLsuqLWRBwOBoRctFBAKkJar4z8s/exec";
+const GOOGLE_SHEETS_ENDPOINT = "https://script.google.com/macros/s/AKfycbwmF93dk2qHCIyXe7uFqHoGQcdNVPS2Hgr1QFvBw-T4nqntNPCNEKiMJaTMDNbeOuxI/exec";
 
 export async function submitLead(
   answers: Answers,
